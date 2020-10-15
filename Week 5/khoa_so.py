@@ -1,39 +1,40 @@
-def findLargest(n, v): 
-    flag = 0
-    sum = 0
+s = input().strip()
+
+count = [0]*10
+for i in s:
+    count[int(i)]+=1
     
-    for i in range(n): 
-        if (v[i] == 0): 
-            flag = 1
-        sum += v[i] 
-    v.sort(reverse = True)
-    y = sum % 3
-    if (y != 0):
-        i = n - 1
-        while(i >= 0):
-            if (v[i] % 3 == y): 
-                v.remove(v[i]) 
-                flag = 1
-                break
-            i -= 1
-        if (flag == 0):
-            y = 3 - y
-            cnt = 0
-            i = n - 1
-            while(i >= 0):
-                if (v[i] % 3 == y): 
-                    v.remove(v[i]) 
-                    cnt += 1
-                    if (cnt >= 2): 
-                        break         
-                i -= 1
-
-    for i in (v): 
-        print(i, end = "")
+sum = 0
+for i in range(10):
+    sum += i*count[i]
+    
+mod_2 = []
+mod_1 = []
+for i in range(1,9):
+    if i % 3 == 1:
+        mod_1+=[i]*count[i]
+    if i % 3 == 2:
+        mod_2+=[i]*count[i]
         
-def split(arr): 
-    return list(map(int, arr))
+if(sum % 3 == 2):
+    if len(mod_2) > 0:
+        count[mod_2[0]] -= 1
+    else:
+        count[mod_1[0]] -= 1
+        count[mod_1[1]] -= 1
 
-v = split(input())
-n = len(v)
-findLargest(n, v)
+elif(sum % 3 == 1):
+    if len(mod_1) > 0:
+        count[mod_1[0]] -= 1
+    else: 
+        count[mod_2[0]] -= 1
+        count[mod_2[1]] -= 1
+        
+s = ''
+a = list(range(10))
+a.reverse()
+
+for x in a:
+    s+=str(x)*count[x]
+    
+print(s)
