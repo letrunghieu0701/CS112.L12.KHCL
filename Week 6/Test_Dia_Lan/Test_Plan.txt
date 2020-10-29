@@ -1,0 +1,77 @@
+The Test Plan 
+
+A. Test biên cao:
+	Nhóm dùng 9 test case để kiểm tra độ chính xác và hiệu năng của thuật toán đối với đầu vào là các biên cao. Mục đích của các test case này là để kiểm tra hiệu năng tính toán (thời gian chạy và bộ nhớ tiêu tốn) của chương trình.
+	Test case 1, 2, 3: 
+		Dòng 1: n = 2*(10^4), k = 2 * (10^4)
+ 		Dòng 2: n số nguyên được random trong khoảng [0  ->  2^12)
+		File output 1: YES
+		File output 2: YES
+		File output 3: YES
+	Test case 4, 5:
+		Dòng 1: n = 2*(10^4), k = 2*(10^4) hoặc 2*(10^4) - 1
+		Dòng 2: n số nguyên được random trong khoảng [2^11  ->  2^12)
+		File output 4: YES
+		File output 5: YES
+	Test case 6:
+		Dòng 1: n = 2*(10^4), k = 1 
+		Dòng 2: n số nguyên được random trong khoảng [0 -> 2^12)
+		File output: YES
+	Test case 7:
+		Dòng 1: n = 2*(10^4), k = 1 
+		Dòng 2: n số nguyên được random trong khoảng [2^11 -> 2^12)
+		File output: NO
+	Test case 8:
+		Dòng 1: n = 2*(10^4), k = 2*(10^4)
+		Dòng 2: n số nguyên có giá trị 2^12 - 1
+		File output: NO
+	Test case 9:
+		Dòng 1: n = 2*(10^4), k = 1
+		Dòng 2: n số nguyên có giá trị 2^12 - 1
+ 		File output: NO
+	Test case 10:
+		Dòng 1: n = 2*(10^4), k = 2*(10^4)
+		Dòng 2: tất cả n số nguyên đều là 0 
+		File output: YES
+
+C. Test kiểm tra trình tự AND bit.
+	Để kiểm tra trình tự so AND của hai chuỗi binary có so tuần tự trong LSB đến MSB hay không.
+	Test case 11: 
+		Dòng 1: n = 5, k = 5
+		Dòng 2: các số: 1024 1023 240 15 2048
+		File output: YES
+	Test case 12:
+		Dòng 1: n = 6, k = 6
+		Dòng 2: các số: 1 2 4 8 16 32
+		File output: YES
+	Test case 13: 
+		Dòng 1: n = 5, k = 3
+		Dòng 2: các số: 2112 2111 2056 2055 8 7
+		File output: YES 
+	Test case 14: 
+		Dòng 1: n = 7, k = 7
+		Dòng 2: 2048 1154 548 265 64 16 4095
+		File output: YES
+
+D. Test những trường hợp cơ bản nhất. 
+	Ví dụ như nếu chỉ có một chuỗi bit thì sẽ không thể nào AND với các chuỗi bit khác, và kết quả trả về phải sẽ phụ thuộc vào số thể hiện đặc điểm gene có bằng 0 hay không
+	Test case 15: 
+		Dòng 1: n = 1, k = 1
+		Dòng 2: số bất kì (ở phần testcase nhóm chọn số 0)
+		File output: YES
+	Test case 16:
+		Dòng 1: n = 6, k = 1
+		Dòng 2: 1 2 4 8 16 32 
+		File output: NO
+		
+E. Test những trường hợp OUTPUT YES với k(kmax) thì cũng YES với mọi k < kmax, và NO với k > kmax. 
+	Test case 17:
+		Dòng 1: n = 6, k = 2 (kmax = 3)
+		Dòng 2: 8 16 32 253 511 1 
+		File output: YES
+ 	Test case 18:
+		Dòng 1: n = 6, k = 4 (kmax = 3)
+		Dòng 2: 8 16 32 253 511 1 
+		File output: YES
+
+	 	
